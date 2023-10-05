@@ -1,0 +1,333 @@
+---
+title: "DISEÑO EXPERIMENTAL"
+subtitle: "Facultad de Ciencias Agrarias - UNJu. Año 2023"
+author: "Ing. Agr. Ivone Humacata"
+toc: true
+number-sections: true
+highlight-style: pygments
+format:
+  html: 
+    toc: TRUE
+    toc_float: TRUE
+    code-fold: true
+    html-math-method: katex
+  pdf:
+    geometry: 
+      - top=30mm
+      - left=30mm
+  docx: default
+---
+
+# EXPERIMENTOS FACTORIALES
+
+## OBJETIVOS DE APRENDIZAJE
+
+<div style="text-align: justify">
+
+1.  Plantear adecuadamente los componentes del modelo matemático de un experimentos factorial aplicado a un DCA y a un DBCA.
+
+2.  Desarrollar destrezas técnicas en el manejo de software estadístico para el análisis de datos experimentales.
+
+3.  Realizar el analisis estadistico de un experimento factorial. Interpretar y comunicar correctamente los resultados del analísis estadístico.
+
+4.  Evaluar la confiabilidad de los resultados experimentales.
+
+## INTRODUCCION
+
+<div style="text-align: justify">
+
+Los experimentos factoriales son un tipo de diseño experimental en el cual se estudian los efectos de dos o más factores en una variable de interés. En este tipo de experimentos, se manipulan de manera simultánea y combinada los diferentes niveles de los factores para determinar cómo interactúan entre sí y cómo influyen en la variable de respuesta.
+
+La principal ventaja de los experimentos factoriales es que permiten estudiar el efecto de múltiples factores al mismo tiempo, lo que permite ahorrar tiempo y recursos en comparación con realizar experimentos individuales para cada factor. Además, los experimentos factoriales también permiten estudiar las interacciones entre los factores, es decir, cómo el efecto de un factor puede depender del nivel de otro factor.
+
+
+## EJEMPLO 7 \~ EFECTO DE LA TEMPERATURA Y PH
+
+<div style="text-align: justify">
+
+El objetivo de este estudio es evaluar los efectos combinados de la temperatura y el pH en la tasa de germinación de las semillas de *Cedrela sp.*
+
+Diseño experimental: Se usara un experimento factorial de dos factores para investigar cómo la temperatura y el pH influyen en la germinación de las semillas. Los factores son la temperatura (dos niveles: 25°C y 30°C) y el pH (dos niveles: 6 y 7). Cada combinación de temperatura y pH se repetirá cinco veces, dando como resultado un total de 20 unidades experimentales.
+
+Recopilación de datos: se coloca 30 semillas para cada tratamiento en placas de Petri separadas, manteniendo la temperatura y los niveles de pH designados. Se cuenta y registra el número de semillas germinadas después de un período de tiempo fijo (2 semanas). Se calcula el porcentaje de germinación para cada tratamiento como la proporción de semillas germinadas con respecto al número total de semillas plantadas.
+
+
+### OBJETIVO
+
+Evaluar los efectos combinados de la temperatura y el pH en la tasa de germinación de las semillas de *Cedrela sp.*
+
+Diseño experimental: Se usara un diseño factorial $2 \times 2 = 4$ tratamientos
+
+
+### ALEATORIZACION
+
+Se aleatoriza las cajas de Petri que corresponden a las combinaciones de factores o tratamientos.
+
+
+### UNIDADES EXPERIMENTALES
+
+Son cada una de las cajas de Petri que tiene la combinacion de los factores temperatura y pH.
+
+### UNIDADES DE OBSERVACION
+
+Cada grupo de 30 semillas que se 'sembraron' en las cajas de Petri.
+
+### VARIABLE RESPUESTA
+
+Cantidad de semillas germinadas por caja de Petri.
+
+### VARIABLES INDEPENDIENTES
+
+En este caso se los denomina factores.
+
+Factor Temperatura con dos niveles: 25 y 30 °C.
+
+Factor ph: 6 y 7.
+
+### CARGAR LA BASE DE DATOS
+
+```{r}
+library(readxl)
+datos <- read_excel("semillas.xlsx")
+datos$temperatura <- as.factor(datos$temperatura)
+datos$ph <- as.factor (datos$ph)
+str(datos)
+```
+
+### ANALISIS EXPLORATORIO
+
+**Medidas de resumen**
+
+```{r, message=FALSE, warning=FALSE}
+library(dplyr)
+library(moments)
+# solicitar medidas de resumen para temperatura
+datos %>%
+  group_by(temperatura) %>%
+  summarise(minimo = round(min(germinacion), 2),
+            media = round(mean(germinacion), 2),
+            desvio = round(sd(germinacion), 2),
+            asimetria = round(skewness(germinacion), 2),
+            mediana = round(median(germinacion), 2),
+            CV = round((desvio/media*100),2),
+            maximo = round(max(germinacion), 2))
+
+# solicitar medidas de resumen para ph
+datos %>%
+  group_by(ph) %>%
+  summarise(minimo = round(min(germinacion), 2),
+            media = round(mean(germinacion), 2),
+            desvio = round(sd(germinacion), 2),
+            asimetria = round(skewness(germinacion), 2),
+            mediana = round(median(germinacion), 2),
+            CV = round((desvio/media*100),2),
+            maximo = round(max(germinacion), 2))
+```
+
+**Gráfico de cajas**
+
+```{r}
+library(ggplot2)
+datos %>%
+ggplot(
+  aes(x = interaction(temperatura, ph), y = germinacion)) +
+  geom_boxplot() +
+  labs(x = "Interaccion (temp, ph)", y = "% germinacion") +
+  ggtitle("Germinacion de semillas de Cedrela sp")
+```
+
+**Grafico de interacción**
+
+```{r}
+interaction.plot(
+  datos$temperatura,
+  datos$ph,
+  datos$germinacion,
+  ylab = "germinacion",
+  xlab = "temperatura",
+  trace.label = "ph"
+)
+
+interaction.plot(
+  datos$ph,
+  datos$temperatura,
+  datos$germinacion,
+  ylab = "germinacion",
+  xlab = "ph",
+  trace.label = "temperatura"
+)
+```
+
+### MODELO MATEMATICO
+
+El modelo matemático para un experimento factorial aplicado a un DCA es:
+
+$$ y_{ijk} = \mu + \alpha_i + \beta_j + \alpha \beta _{ij} + \epsilon_{ijk} $$
+
+Siendo,
+
+$i= 25, 30$\
+$j=6, 7$\
+$k= 1, 2, 3, 4, 5$\
+
+$y_{ijk}$ son las observaciones de semillas germinadas.\
+$\mu$ es la media general de todas las observaciones.\
+$\alpha_i$ es el efecto del i-ésimo nivel del factor temperatura.\
+$\beta_j$ es el efecto del j-ésimo nivel del factor ph.\
+$\alpha \beta_{ij}$ es el efecto de la interaccion temperatura y ph.\
+$\epsilon_{ijk}$ es el termino de error, siendo $\epsilon_{ij}$ \~ N (0, $\sigma^2$) independientes.\
+
+
+### HIPOTESIS DE ANALISIS
+
+Se plantea una hipotesis para cada factor.
+
+- **Factor temperatura**
+
+$Ho: \alpha_{25}=\alpha_{30}$ (los efectos de los niveles del factor temperatura son iguales)\
+$H1:$ los efectos de los niveles del factor temperatura no son iguales.
+
+- **Factor ph**
+
+$Ho: \beta_{6}=\beta_{7}$ (los efectos de los niveles del factor ph son iguales)\
+$H1:$ los efectos de los niveles del factor ph no son iguales.
+
+- **Interaccion temperatura\*ph**
+
+$Ho: \alpha_{ij}*\beta_{ij}=\alpha_{ij}*\beta_{ij}$ (los efectos de la interaccion de los factores son iguales)\
+$H1:$ los efectos de la interaccion de los factores no son iguales.
+
+
+### ANOVA
+
+```{r, message=FALSE, warning=FALSE}
+library(car)
+modelo <- lm(germinacion ~temperatura*ph, data=datos)
+Anova(modelo, type=3)
+```
+
+Con un nivel de significacion ($\alpha$) de 0.05 y un p-valor de 0.01310 se rechaza la Ho para el factor temperatura.
+
+Con un p-valor de 0.0100 se rechaza la Ho para el factor ph.
+
+Con un p-valor de 0.0145 se rechaza la Ho para la interaccion. Existen diferencias signicativas entre las medias del factor temperatura, así tambien entre las medias del factor ph y entre las medias de las interacciones de estos factores.  
+
+### VERIFICACION DE LOS SUPUESTOS DEL MODELO
+
+Los supuestos que se comprobaran son homogeneidad de varianzas y normalidad de residuos.  
+
+**Graficamente**
+
+```{r}
+n=1:20
+par( mfrow = c(2,2) )
+plot(modelo, which=5)
+plot(modelo, which=1)
+plot(modelo, which=2)
+plot(residuals(modelo) ~ n, main="Residuals vs Exp. Unit",
+font.main=1,data=datos)
+abline(h = 0, lty = 2)
+```
+
+**Supuesto de normalidad. Test de Shapiro Wilks**
+
+```{r}
+shapiro.test(resid(modelo))
+```
+
+El supuesto de normalidad se cumple.
+
+**Homogeneidad de Varianzas \~ Test de Levenne**
+
+```{r, message=FALSE, warning=FALSE}
+library(car)
+# crear el vector tratamiento
+trat=interaction(datos$temperatura,datos$ph)
+leveneTest(resid(modelo),trat,center = mean)
+```
+
+El supuesto de homogeneidad de varianzas se cumple.
+
+### CONCLUSIONES DEL MODELO PLANTEADO
+
+Se concluye que los efectos de los niveles de la interaccion temperatura-ph son significativos en la germinacion de semillas de *Cedrela sp* ($F_{(1, 16)}=7.5144, p-value =0.0145$) a un nivel de significacion de $\alpha = 0.05$. Se recomienda realizar pruebas de comparacion de medias post hoc para saber cual es el mejor tratamiento.
+
+Nota: realizamos la conclusión final en base a la interacción porque este diseño busca estudiar esos efectos como objetivo principal.
+
+### CONFIABILIDAD DEL MODELO
+
+```{r}
+CMEE = 515/16
+(sqrt(CMEE))/mean(datos$germinacion)*100
+resumen.modelo=summary(modelo)
+resumen.modelo$r.squared
+```
+
+Con un CV bajo podemos decir que el modelo es adecuado sin embargo al presentar un $r^2$ igual a 0.4051 no tiene buen poder explicativo. 
+
+
+### TEST DE TUKEY
+
+```{r, message=FALSE, warning=FALSE}
+modelo <- aov(germinacion ~temperatura*ph, data=datos)
+TukeyHSD(modelo, trt="trat", ordered = T)
+```
+
+Con respecto a la combinacion temperatura 25°C y ph 7 versus 25:6, se recomienda la primera ya que presenta diferencias estadisticas significativas.
+El resto de los contrastes no presenta diferencias estadísticas significativas.  
+
+```{r}
+plot(TukeyHSD(modelo))
+```
+
+## EJERCICIO 8 \~ TEMPERATURA Y TIEMPO (FACTORIAL APLICADO A UN DBCA)
+
+<div style="text-align: justify">
+
+El objetivo de este estudio es investigar los efectos combinados de la temperatura y el tiempo en el contenido de nutrientes de los productos alimenticios.
+
+Diseño experimental: se empleara un diseño factorial de dos factores con bloques para examinar cómo la temperatura y el tiempo afectan el contenido de nutrientes de los productos alimenticios. Los factores son la temperatura (dos niveles: 150°C y 180°C) y el tiempo (dos niveles: 30 minutos y 60 minutos). Para tener en cuenta las posibles fuentes de variabilidad, se incorporara una variable de bloqueo, los proveedores, lo que dará como resultado cinco bloques.
+
+Recopilación de datos: se prepara varios lotes del mismo producto alimenticio en condiciones controladas para cada combinación de temperatura y tiempo dentro de cada bloque. Después de la cocción, se analiza el contenido de nutrientes (p. ej., proteínas, grasas, vitaminas) en cada muestra utilizando métodos bromatológicos estándar.
+
+Análisis de datos: con R realizar un ANOVA factorial de dos factores con bloques para determinar los efectos principales de la temperatura y el tiempo, así como su interacción, en el contenido de nutrientes. Evaluar si la variable de bloqueo influye significativamente en la variable de respuesta. Realice pruebas post hoc, como HSD de Tukey, para identificar diferencias específicas entre los niveles de los factores.
+
+```{r}
+# Factor temperatura (dos niveles: 150°C y 180°C)
+temperatura <- factor(rep(c(150, 180), each=10))
+# Factor tiempo (dos niveles: 30 minutos y 60 minutos)
+tiempo <- factor(rep(c(30, 60), each=5))
+# Datos de proveedores (cinco proveedores diferentes)
+proveedor <- factor(rep(1:5, times = 4))
+# Variable respuesta nutrientes
+nutrientes <- c(15.2, 14.5, 14.8, 12.0, 18.3,
+                10.7, 9.5, 16.8, 11.4, 16.6,
+                13.2, 9.4, 11.57, 13.2, 12.1,
+                12.7, 9.45, 12.8, 12.4, 13.6)
+# Crear marco de datos
+datos <- data.frame(temperatura, tiempo, proveedor, nutrientes)
+datos
+str(datos)
+# modelo
+modelo <- lm(nutrientes ~temperatura*tiempo+proveedor, data=datos)
+Anova(modelo, type=3)
+# supuestos
+shapiro.test(resid(modelo))
+# crear el vector tratamiento
+trat=interaction(datos$temperatura,datos$tiempo)
+leveneTest(resid(modelo),trat,center = mean)
+```
+
+
+## RECURSOS RECOMENDADOS
+
+**Bibliografia**
+
+Garibaldi, L. A., Oddi, F. J., Aristimuño, F. J., & Behnisch, A. N. (2019). Modelos estadísticos en lenguaje R. Cap 2. Pags. 72-
+
+Lawson, J. (2014). *Design and Analysis of Experiments with R* (Vol. 115). CRC press. Cap 4. Pags. 55-112. Disponible en: https://elearning.unite.it/pluginfile.php/221606/mod_resource/content/1/BookDOEwithR.pdf
+
+Quinteros, H. (1997). Diseño Experimental. Facultad de Ciencias Agrarias, Universidad Nacional de Jujuy. Pags. 92-109.
+
+
+

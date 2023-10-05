@@ -1,0 +1,798 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.2.475">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Ing. Agr. Ivone Humacata">
+
+<title>DISEÑO EXPERIMENTAL</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+
+<script src="index_files/libs/clipboard/clipboard.min.js"></script>
+<script src="index_files/libs/quarto-html/quarto.js"></script>
+<script src="index_files/libs/quarto-html/popper.min.js"></script>
+<script src="index_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="index_files/libs/quarto-html/anchor.min.js"></script>
+<link href="index_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="index_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="index_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="index_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="index_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+
+  <script>window.backupDefine = window.define; window.define = undefined;</script><script src="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.js"></script>
+  <script>document.addEventListener("DOMContentLoaded", function () {
+ var mathElements = document.getElementsByClassName("math");
+ var macros = [];
+ for (var i = 0; i < mathElements.length; i++) {
+  var texText = mathElements[i].firstChild;
+  if (mathElements[i].tagName == "SPAN") {
+   katex.render(texText.data, mathElements[i], {
+    displayMode: mathElements[i].classList.contains('display'),
+    throwOnError: false,
+    macros: macros,
+    fleqn: false
+   });
+}}});
+  </script>
+  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.css">
+
+</head>
+
+<body>
+
+<div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
+<div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+  <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#experimentos-factoriales" id="toc-experimentos-factoriales" class="nav-link active" data-scroll-target="#experimentos-factoriales"><span class="toc-section-number">1</span>  EXPERIMENTOS FACTORIALES</a>
+  <ul class="collapse">
+  <li><a href="#objetivos-de-aprendizaje" id="toc-objetivos-de-aprendizaje" class="nav-link" data-scroll-target="#objetivos-de-aprendizaje"><span class="toc-section-number">1.1</span>  OBJETIVOS DE APRENDIZAJE</a></li>
+  <li><a href="#introduccion" id="toc-introduccion" class="nav-link" data-scroll-target="#introduccion"><span class="toc-section-number">1.2</span>  INTRODUCCION</a></li>
+  <li><a href="#ejemplo-7-efecto-de-la-temperatura-y-ph" id="toc-ejemplo-7-efecto-de-la-temperatura-y-ph" class="nav-link" data-scroll-target="#ejemplo-7-efecto-de-la-temperatura-y-ph"><span class="toc-section-number">1.3</span>  EJEMPLO 7 ~ EFECTO DE LA TEMPERATURA Y PH</a>
+  <ul class="collapse">
+  <li><a href="#objetivo" id="toc-objetivo" class="nav-link" data-scroll-target="#objetivo"><span class="toc-section-number">1.3.1</span>  OBJETIVO</a></li>
+  <li><a href="#aleatorizacion" id="toc-aleatorizacion" class="nav-link" data-scroll-target="#aleatorizacion"><span class="toc-section-number">1.3.2</span>  ALEATORIZACION</a></li>
+  <li><a href="#unidades-experimentales" id="toc-unidades-experimentales" class="nav-link" data-scroll-target="#unidades-experimentales"><span class="toc-section-number">1.3.3</span>  UNIDADES EXPERIMENTALES</a></li>
+  <li><a href="#unidades-de-observacion" id="toc-unidades-de-observacion" class="nav-link" data-scroll-target="#unidades-de-observacion"><span class="toc-section-number">1.3.4</span>  UNIDADES DE OBSERVACION</a></li>
+  <li><a href="#variable-respuesta" id="toc-variable-respuesta" class="nav-link" data-scroll-target="#variable-respuesta"><span class="toc-section-number">1.3.5</span>  VARIABLE RESPUESTA</a></li>
+  <li><a href="#variables-independientes" id="toc-variables-independientes" class="nav-link" data-scroll-target="#variables-independientes"><span class="toc-section-number">1.3.6</span>  VARIABLES INDEPENDIENTES</a></li>
+  <li><a href="#cargar-la-base-de-datos" id="toc-cargar-la-base-de-datos" class="nav-link" data-scroll-target="#cargar-la-base-de-datos"><span class="toc-section-number">1.3.7</span>  CARGAR LA BASE DE DATOS</a></li>
+  <li><a href="#analisis-exploratorio" id="toc-analisis-exploratorio" class="nav-link" data-scroll-target="#analisis-exploratorio"><span class="toc-section-number">1.3.8</span>  ANALISIS EXPLORATORIO</a></li>
+  <li><a href="#modelo-matematico" id="toc-modelo-matematico" class="nav-link" data-scroll-target="#modelo-matematico"><span class="toc-section-number">1.3.9</span>  MODELO MATEMATICO</a></li>
+  <li><a href="#hipotesis-de-analisis" id="toc-hipotesis-de-analisis" class="nav-link" data-scroll-target="#hipotesis-de-analisis"><span class="toc-section-number">1.3.10</span>  HIPOTESIS DE ANALISIS</a></li>
+  <li><a href="#anova" id="toc-anova" class="nav-link" data-scroll-target="#anova"><span class="toc-section-number">1.3.11</span>  ANOVA</a></li>
+  <li><a href="#verificacion-de-los-supuestos-del-modelo" id="toc-verificacion-de-los-supuestos-del-modelo" class="nav-link" data-scroll-target="#verificacion-de-los-supuestos-del-modelo"><span class="toc-section-number">1.3.12</span>  VERIFICACION DE LOS SUPUESTOS DEL MODELO</a></li>
+  <li><a href="#conclusiones-del-modelo-planteado" id="toc-conclusiones-del-modelo-planteado" class="nav-link" data-scroll-target="#conclusiones-del-modelo-planteado"><span class="toc-section-number">1.3.13</span>  CONCLUSIONES DEL MODELO PLANTEADO</a></li>
+  <li><a href="#confiabilidad-del-modelo" id="toc-confiabilidad-del-modelo" class="nav-link" data-scroll-target="#confiabilidad-del-modelo"><span class="toc-section-number">1.3.14</span>  CONFIABILIDAD DEL MODELO</a></li>
+  <li><a href="#test-de-tukey" id="toc-test-de-tukey" class="nav-link" data-scroll-target="#test-de-tukey"><span class="toc-section-number">1.3.15</span>  TEST DE TUKEY</a></li>
+  </ul></li>
+  <li><a href="#ejercicio-8-temperatura-y-tiempo-factorial-aplicado-a-un-dbca" id="toc-ejercicio-8-temperatura-y-tiempo-factorial-aplicado-a-un-dbca" class="nav-link" data-scroll-target="#ejercicio-8-temperatura-y-tiempo-factorial-aplicado-a-un-dbca"><span class="toc-section-number">1.4</span>  EJERCICIO 8 ~ TEMPERATURA Y TIEMPO (FACTORIAL APLICADO A UN DBCA)</a></li>
+  <li><a href="#recursos-recomendados" id="toc-recursos-recomendados" class="nav-link" data-scroll-target="#recursos-recomendados"><span class="toc-section-number">1.5</span>  RECURSOS RECOMENDADOS</a></li>
+  </ul></li>
+  </ul>
+</nav>
+</div>
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">DISEÑO EXPERIMENTAL</h1>
+<p class="subtitle lead">Facultad de Ciencias Agrarias - UNJu. Año 2023</p>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Ing. Agr. Ivone Humacata </p>
+          </div>
+  </div>
+    
+  
+    
+  </div>
+  
+
+</header>
+
+<section id="experimentos-factoriales" class="level1" data-number="1">
+<h1 data-number="1"><span class="header-section-number">1</span> EXPERIMENTOS FACTORIALES</h1>
+<section id="objetivos-de-aprendizaje" class="level2" data-number="1.1">
+<h2 data-number="1.1" class="anchored" data-anchor-id="objetivos-de-aprendizaje"><span class="header-section-number">1.1</span> OBJETIVOS DE APRENDIZAJE</h2>
+<div style="text-align: justify">
+
+<ol type="1">
+<li><p>Plantear adecuadamente los componentes del modelo matemático de un experimentos factorial aplicado a un DCA y a un DBCA.</p></li>
+<li><p>Desarrollar destrezas técnicas en el manejo de software estadístico para el análisis de datos experimentales.</p></li>
+<li><p>Realizar el analisis estadistico de un experimento factorial. Interpretar y comunicar correctamente los resultados del analísis estadístico.</p></li>
+<li><p>Evaluar la confiabilidad de los resultados experimentales.</p></li>
+</ol>
+</div></section>
+<section id="introduccion" class="level2" data-number="1.2">
+<h2 data-number="1.2" class="anchored" data-anchor-id="introduccion"><span class="header-section-number">1.2</span> INTRODUCCION</h2>
+<div style="text-align: justify">
+
+<p>Los experimentos factoriales son un tipo de diseño experimental en el cual se estudian los efectos de dos o más factores en una variable de interés. En este tipo de experimentos, se manipulan de manera simultánea y combinada los diferentes niveles de los factores para determinar cómo interactúan entre sí y cómo influyen en la variable de respuesta.</p>
+<p>La principal ventaja de los experimentos factoriales es que permiten estudiar el efecto de múltiples factores al mismo tiempo, lo que permite ahorrar tiempo y recursos en comparación con realizar experimentos individuales para cada factor. Además, los experimentos factoriales también permiten estudiar las interacciones entre los factores, es decir, cómo el efecto de un factor puede depender del nivel de otro factor.</p>
+</div></section>
+<section id="ejemplo-7-efecto-de-la-temperatura-y-ph" class="level2" data-number="1.3">
+<h2 data-number="1.3" class="anchored" data-anchor-id="ejemplo-7-efecto-de-la-temperatura-y-ph"><span class="header-section-number">1.3</span> EJEMPLO 7 ~ EFECTO DE LA TEMPERATURA Y PH</h2>
+<div style="text-align: justify">
+
+<p>El objetivo de este estudio es evaluar los efectos combinados de la temperatura y el pH en la tasa de germinación de las semillas de <em>Cedrela sp.</em></p>
+<p>Diseño experimental: Se usara un experimento factorial de dos factores para investigar cómo la temperatura y el pH influyen en la germinación de las semillas. Los factores son la temperatura (dos niveles: 25°C y 30°C) y el pH (dos niveles: 6 y 7). Cada combinación de temperatura y pH se repetirá cinco veces, dando como resultado un total de 20 unidades experimentales.</p>
+<p>Recopilación de datos: se coloca 30 semillas para cada tratamiento en placas de Petri separadas, manteniendo la temperatura y los niveles de pH designados. Se cuenta y registra el número de semillas germinadas después de un período de tiempo fijo (2 semanas). Se calcula el porcentaje de germinación para cada tratamiento como la proporción de semillas germinadas con respecto al número total de semillas plantadas.</p>
+<section id="objetivo" class="level3" data-number="1.3.1">
+<h3 data-number="1.3.1" class="anchored" data-anchor-id="objetivo"><span class="header-section-number">1.3.1</span> OBJETIVO</h3>
+<p>Evaluar los efectos combinados de la temperatura y el pH en la tasa de germinación de las semillas de <em>Cedrela sp.</em></p>
+<p>Diseño experimental: Se usara un diseño factorial <span class="math inline">2 \times 2 = 4</span> tratamientos</p>
+</section>
+<section id="aleatorizacion" class="level3" data-number="1.3.2">
+<h3 data-number="1.3.2" class="anchored" data-anchor-id="aleatorizacion"><span class="header-section-number">1.3.2</span> ALEATORIZACION</h3>
+<p>Se aleatoriza las cajas de Petri que corresponden a las combinaciones de factores o tratamientos.</p>
+</section>
+<section id="unidades-experimentales" class="level3" data-number="1.3.3">
+<h3 data-number="1.3.3" class="anchored" data-anchor-id="unidades-experimentales"><span class="header-section-number">1.3.3</span> UNIDADES EXPERIMENTALES</h3>
+<p>Son cada una de las cajas de Petri que tiene la combinacion de los factores temperatura y pH.</p>
+</section>
+<section id="unidades-de-observacion" class="level3" data-number="1.3.4">
+<h3 data-number="1.3.4" class="anchored" data-anchor-id="unidades-de-observacion"><span class="header-section-number">1.3.4</span> UNIDADES DE OBSERVACION</h3>
+<p>Cada grupo de 30 semillas que se ‘sembraron’ en las cajas de Petri.</p>
+</section>
+<section id="variable-respuesta" class="level3" data-number="1.3.5">
+<h3 data-number="1.3.5" class="anchored" data-anchor-id="variable-respuesta"><span class="header-section-number">1.3.5</span> VARIABLE RESPUESTA</h3>
+<p>Cantidad de semillas germinadas por caja de Petri.</p>
+</section>
+<section id="variables-independientes" class="level3" data-number="1.3.6">
+<h3 data-number="1.3.6" class="anchored" data-anchor-id="variables-independientes"><span class="header-section-number">1.3.6</span> VARIABLES INDEPENDIENTES</h3>
+<p>En este caso se los denomina factores.</p>
+<p>Factor Temperatura con dos niveles: 25 y 30 °C.</p>
+<p>Factor ph: 6 y 7.</p>
+</section>
+<section id="cargar-la-base-de-datos" class="level3" data-number="1.3.7">
+<h3 data-number="1.3.7" class="anchored" data-anchor-id="cargar-la-base-de-datos"><span class="header-section-number">1.3.7</span> CARGAR LA BASE DE DATOS</h3>
+<div class="cell">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(readxl)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>datos <span class="ot">&lt;-</span> <span class="fu">read_excel</span>(<span class="st">"semillas.xlsx"</span>)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>datos<span class="sc">$</span>temperatura <span class="ot">&lt;-</span> <span class="fu">as.factor</span>(datos<span class="sc">$</span>temperatura)</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>datos<span class="sc">$</span>ph <span class="ot">&lt;-</span> <span class="fu">as.factor</span> (datos<span class="sc">$</span>ph)</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(datos)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>tibble [20 × 3] (S3: tbl_df/tbl/data.frame)
+ $ temperatura: Factor w/ 2 levels "25","30": 1 1 1 1 1 1 1 1 1 1 ...
+ $ ph         : Factor w/ 2 levels "6","7": 1 2 1 2 1 2 1 2 1 2 ...
+ $ germinacion: num [1:20] 78.8 98.8 75.9 88.3 74 ...</code></pre>
+</div>
+</div>
+</section>
+<section id="analisis-exploratorio" class="level3" data-number="1.3.8">
+<h3 data-number="1.3.8" class="anchored" data-anchor-id="analisis-exploratorio"><span class="header-section-number">1.3.8</span> ANALISIS EXPLORATORIO</h3>
+<p><strong>Medidas de resumen</strong></p>
+<div class="cell">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(moments)</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="co"># solicitar medidas de resumen para temperatura</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>datos <span class="sc">%&gt;%</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(temperatura) <span class="sc">%&gt;%</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">minimo =</span> <span class="fu">round</span>(<span class="fu">min</span>(germinacion), <span class="dv">2</span>),</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>            <span class="at">media =</span> <span class="fu">round</span>(<span class="fu">mean</span>(germinacion), <span class="dv">2</span>),</span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>            <span class="at">desvio =</span> <span class="fu">round</span>(<span class="fu">sd</span>(germinacion), <span class="dv">2</span>),</span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>            <span class="at">asimetria =</span> <span class="fu">round</span>(<span class="fu">skewness</span>(germinacion), <span class="dv">2</span>),</span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>            <span class="at">mediana =</span> <span class="fu">round</span>(<span class="fu">median</span>(germinacion), <span class="dv">2</span>),</span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>            <span class="at">CV =</span> <span class="fu">round</span>((desvio<span class="sc">/</span>media<span class="sc">*</span><span class="dv">100</span>),<span class="dv">2</span>),</span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>            <span class="at">maximo =</span> <span class="fu">round</span>(<span class="fu">max</span>(germinacion), <span class="dv">2</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 2 × 8
+  temperatura minimo media desvio asimetria mediana    CV maximo
+  &lt;fct&gt;        &lt;dbl&gt; &lt;dbl&gt;  &lt;dbl&gt;     &lt;dbl&gt;   &lt;dbl&gt; &lt;dbl&gt;  &lt;dbl&gt;
+1 25            74.0  85.4   8.55      0.15      86 10.0    98.8
+2 30            82.8  88.4   4.25      0.5       87  4.81   95.3</code></pre>
+</div>
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># solicitar medidas de resumen para ph</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>datos <span class="sc">%&gt;%</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(ph) <span class="sc">%&gt;%</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">minimo =</span> <span class="fu">round</span>(<span class="fu">min</span>(germinacion), <span class="dv">2</span>),</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>            <span class="at">media =</span> <span class="fu">round</span>(<span class="fu">mean</span>(germinacion), <span class="dv">2</span>),</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>            <span class="at">desvio =</span> <span class="fu">round</span>(<span class="fu">sd</span>(germinacion), <span class="dv">2</span>),</span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>            <span class="at">asimetria =</span> <span class="fu">round</span>(<span class="fu">skewness</span>(germinacion), <span class="dv">2</span>),</span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>            <span class="at">mediana =</span> <span class="fu">round</span>(<span class="fu">median</span>(germinacion), <span class="dv">2</span>),</span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>            <span class="at">CV =</span> <span class="fu">round</span>((desvio<span class="sc">/</span>media<span class="sc">*</span><span class="dv">100</span>),<span class="dv">2</span>),</span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>            <span class="at">maximo =</span> <span class="fu">round</span>(<span class="fu">max</span>(germinacion), <span class="dv">2</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 2 × 8
+  ph    minimo media desvio asimetria mediana    CV maximo
+  &lt;fct&gt;  &lt;dbl&gt; &lt;dbl&gt;  &lt;dbl&gt;     &lt;dbl&gt;   &lt;dbl&gt; &lt;dbl&gt;  &lt;dbl&gt;
+1 6       74.0  85.2   7.16     -0.15    86    8.41   95.3
+2 7       78    88.7   6.18     -0.04    88.2  6.97   98.8</code></pre>
+</div>
+</div>
+<p><strong>Gráfico de cajas</strong></p>
+<div class="cell">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>datos <span class="sc">%&gt;%</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">aes</span>(<span class="at">x =</span> <span class="fu">interaction</span>(temperatura, ph), <span class="at">y =</span> germinacion)) <span class="sc">+</span></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>() <span class="sc">+</span></span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Interaccion (temp, ph)"</span>, <span class="at">y =</span> <span class="st">"% germinacion"</span>) <span class="sc">+</span></span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggtitle</span>(<span class="st">"Germinacion de semillas de Cedrela sp"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<p><img src="index_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<p><strong>Grafico de interacción</strong></p>
+<div class="cell">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">interaction.plot</span>(</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>  datos<span class="sc">$</span>temperatura,</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>  datos<span class="sc">$</span>ph,</span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>  datos<span class="sc">$</span>germinacion,</span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">ylab =</span> <span class="st">"germinacion"</span>,</span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">xlab =</span> <span class="st">"temperatura"</span>,</span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>  <span class="at">trace.label =</span> <span class="st">"ph"</span></span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<p><img src="index_files/figure-html/unnamed-chunk-4-1.png" class="img-fluid" width="672"></p>
+</div>
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">interaction.plot</span>(</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>  datos<span class="sc">$</span>ph,</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>  datos<span class="sc">$</span>temperatura,</span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>  datos<span class="sc">$</span>germinacion,</span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">ylab =</span> <span class="st">"germinacion"</span>,</span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">xlab =</span> <span class="st">"ph"</span>,</span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>  <span class="at">trace.label =</span> <span class="st">"temperatura"</span></span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<p><img src="index_files/figure-html/unnamed-chunk-4-2.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+</section>
+<section id="modelo-matematico" class="level3" data-number="1.3.9">
+<h3 data-number="1.3.9" class="anchored" data-anchor-id="modelo-matematico"><span class="header-section-number">1.3.9</span> MODELO MATEMATICO</h3>
+<p>El modelo matemático para un experimento factorial aplicado a un DCA es:</p>
+<p><span class="math display"> y_{ijk} = \mu + \alpha_i + \beta_j + \alpha \beta _{ij} + \epsilon_{ijk} </span></p>
+<p>Siendo,</p>
+<p><span class="math inline">i= 25, 30</span><br>
+<span class="math inline">j=6, 7</span><br>
+<span class="math inline">k= 1, 2, 3, 4, 5</span><br>
+</p>
+<p><span class="math inline">y_{ijk}</span> son las observaciones de semillas germinadas.<br>
+<span class="math inline">\mu</span> es la media general de todas las observaciones.<br>
+<span class="math inline">\alpha_i</span> es el efecto del i-ésimo nivel del factor temperatura.<br>
+<span class="math inline">\beta_j</span> es el efecto del j-ésimo nivel del factor ph.<br>
+<span class="math inline">\alpha \beta_{ij}</span> es el efecto de la interaccion temperatura y ph.<br>
+<span class="math inline">\epsilon_{ijk}</span> es el termino de error, siendo <span class="math inline">\epsilon_{ij}</span> ~ N (0, <span class="math inline">\sigma^2</span>) independientes.<br>
+</p>
+</section>
+<section id="hipotesis-de-analisis" class="level3" data-number="1.3.10">
+<h3 data-number="1.3.10" class="anchored" data-anchor-id="hipotesis-de-analisis"><span class="header-section-number">1.3.10</span> HIPOTESIS DE ANALISIS</h3>
+<p>Se plantea una hipotesis para cada factor.</p>
+<ul>
+<li><strong>Factor temperatura</strong></li>
+</ul>
+<p><span class="math inline">Ho: \alpha_{25}=\alpha_{30}</span> (los efectos de los niveles del factor temperatura son iguales)<br>
+<span class="math inline">H1:</span> los efectos de los niveles del factor temperatura no son iguales.</p>
+<ul>
+<li><strong>Factor ph</strong></li>
+</ul>
+<p><span class="math inline">Ho: \beta_{6}=\beta_{7}</span> (los efectos de los niveles del factor ph son iguales)<br>
+<span class="math inline">H1:</span> los efectos de los niveles del factor ph no son iguales.</p>
+<ul>
+<li><strong>Interaccion temperatura*ph</strong></li>
+</ul>
+<p><span class="math inline">Ho: \alpha_{ij}*\beta_{ij}=\alpha_{ij}*\beta_{ij}</span> (los efectos de la interaccion de los factores son iguales)<br>
+<span class="math inline">H1:</span> los efectos de la interaccion de los factores no son iguales.</p>
+</section>
+<section id="anova" class="level3" data-number="1.3.11">
+<h3 data-number="1.3.11" class="anchored" data-anchor-id="anova"><span class="header-section-number">1.3.11</span> ANOVA</h3>
+<div class="cell">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(car)</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>modelo <span class="ot">&lt;-</span> <span class="fu">lm</span>(germinacion <span class="sc">~</span>temperatura<span class="sc">*</span>ph, <span class="at">data=</span>datos)</span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="fu">Anova</span>(modelo, <span class="at">type=</span><span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>Anova Table (Type III tests)
+
+Response: germinacion
+               Sum Sq Df  F value    Pr(&gt;F)    
+(Intercept)     32114  1 996.8896 7.667e-16 ***
+temperatura       251  1   7.7855   0.01310 *  
+ph                275  1   8.5300   0.01000 *  
+temperatura:ph    242  1   7.5144   0.01449 *  
+Residuals         515 16                       
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</code></pre>
+</div>
+</div>
+<p>Con un nivel de significacion (<span class="math inline">\alpha</span>) de 0.05 y un p-valor de 0.01310 se rechaza la Ho para el factor temperatura.</p>
+<p>Con un p-valor de 0.0100 se rechaza la Ho para el factor ph.</p>
+<p>Con un p-valor de 0.0145 se rechaza la Ho para la interaccion. Existen diferencias signicativas entre las medias del factor temperatura, así tambien entre las medias del factor ph y entre las medias de las interacciones de estos factores.</p>
+</section>
+<section id="verificacion-de-los-supuestos-del-modelo" class="level3" data-number="1.3.12">
+<h3 data-number="1.3.12" class="anchored" data-anchor-id="verificacion-de-los-supuestos-del-modelo"><span class="header-section-number">1.3.12</span> VERIFICACION DE LOS SUPUESTOS DEL MODELO</h3>
+<p>Los supuestos que se comprobaran son homogeneidad de varianzas y normalidad de residuos.</p>
+<p><strong>Graficamente</strong></p>
+<div class="cell">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>n<span class="ot">=</span><span class="dv">1</span><span class="sc">:</span><span class="dv">20</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="fu">par</span>( <span class="at">mfrow =</span> <span class="fu">c</span>(<span class="dv">2</span>,<span class="dv">2</span>) )</span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(modelo, <span class="at">which=</span><span class="dv">5</span>)</span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(modelo, <span class="at">which=</span><span class="dv">1</span>)</span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(modelo, <span class="at">which=</span><span class="dv">2</span>)</span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(<span class="fu">residuals</span>(modelo) <span class="sc">~</span> n, <span class="at">main=</span><span class="st">"Residuals vs Exp. Unit"</span>,</span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a><span class="at">font.main=</span><span class="dv">1</span>,<span class="at">data=</span>datos)</span>
+<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">h =</span> <span class="dv">0</span>, <span class="at">lty =</span> <span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<p><img src="index_files/figure-html/unnamed-chunk-6-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<p><strong>Supuesto de normalidad. Test de Shapiro Wilks</strong></p>
+<div class="cell">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">shapiro.test</span>(<span class="fu">resid</span>(modelo))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+    Shapiro-Wilk normality test
+
+data:  resid(modelo)
+W = 0.94724, p-value = 0.3271</code></pre>
+</div>
+</div>
+<p>El supuesto de normalidad se cumple.</p>
+<p><strong>Homogeneidad de Varianzas ~ Test de Levenne</strong></p>
+<div class="cell">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(car)</span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="co"># crear el vector tratamiento</span></span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>trat<span class="ot">=</span><span class="fu">interaction</span>(datos<span class="sc">$</span>temperatura,datos<span class="sc">$</span>ph)</span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a><span class="fu">leveneTest</span>(<span class="fu">resid</span>(modelo),trat,<span class="at">center =</span> mean)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>Levene's Test for Homogeneity of Variance (center = mean)
+      Df F value Pr(&gt;F)
+group  3  1.3473 0.2944
+      16               </code></pre>
+</div>
+</div>
+<p>El supuesto de homogeneidad de varianzas se cumple.</p>
+</section>
+<section id="conclusiones-del-modelo-planteado" class="level3" data-number="1.3.13">
+<h3 data-number="1.3.13" class="anchored" data-anchor-id="conclusiones-del-modelo-planteado"><span class="header-section-number">1.3.13</span> CONCLUSIONES DEL MODELO PLANTEADO</h3>
+<p>Se concluye que los efectos de los niveles de la interaccion temperatura-ph son significativos en la germinacion de semillas de <em>Cedrela sp</em> (<span class="math inline">F_{(1, 16)}=7.5144, p-value =0.0145</span>) a un nivel de significacion de <span class="math inline">\alpha = 0.05</span>. Se recomienda realizar pruebas de comparacion de medias post hoc para saber cual es el mejor tratamiento.</p>
+<p>Nota: realizamos la conclusión final en base a la interacción porque este diseño busca estudiar esos efectos como objetivo principal.</p>
+</section>
+<section id="confiabilidad-del-modelo" class="level3" data-number="1.3.14">
+<h3 data-number="1.3.14" class="anchored" data-anchor-id="confiabilidad-del-modelo"><span class="header-section-number">1.3.14</span> CONFIABILIDAD DEL MODELO</h3>
+<div class="cell">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>CMEE <span class="ot">=</span> <span class="dv">515</span><span class="sc">/</span><span class="dv">16</span></span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>(<span class="fu">sqrt</span>(CMEE))<span class="sc">/</span><span class="fu">mean</span>(datos<span class="sc">$</span>germinacion)<span class="sc">*</span><span class="dv">100</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 6.52768</code></pre>
+</div>
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>resumen.modelo<span class="ot">=</span><span class="fu">summary</span>(modelo)</span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>resumen.modelo<span class="sc">$</span>r.squared</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 0.4051066</code></pre>
+</div>
+</div>
+<p>Con un CV bajo podemos decir que el modelo es adecuado sin embargo al presentar un <span class="math inline">r^2</span> igual a 0.4051 no tiene buen poder explicativo.</p>
+</section>
+<section id="test-de-tukey" class="level3" data-number="1.3.15">
+<h3 data-number="1.3.15" class="anchored" data-anchor-id="test-de-tukey"><span class="header-section-number">1.3.15</span> TEST DE TUKEY</h3>
+<div class="cell">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>modelo <span class="ot">&lt;-</span> <span class="fu">aov</span>(germinacion <span class="sc">~</span>temperatura<span class="sc">*</span>ph, <span class="at">data=</span>datos)</span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a><span class="fu">TukeyHSD</span>(modelo, <span class="at">trt=</span><span class="st">"trat"</span>, <span class="at">ordered =</span> T)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>  Tukey multiple comparisons of means
+    95% family-wise confidence level
+    factor levels have been ordered
+
+Fit: aov(formula = germinacion ~ temperatura * ph, data = datos)
+
+$temperatura
+       diff       lwr      upr     p adj
+30-25 3.058 -2.322877 8.438877 0.2458141
+
+$ph
+     diff       lwr      upr     p adj
+7-6 3.526 -1.854877 8.906877 0.1838228
+
+$`temperatura:ph`
+            diff       lwr      upr     p adj
+30:7-25:6  6.584 -3.686049 16.85405 0.2942008
+30:6-25:6 10.016 -0.254049 20.28605 0.0572293
+25:7-25:6 10.484  0.213951 20.75405 0.0445821
+30:6-30:7  3.432 -6.838049 13.70205 0.7755525
+25:7-30:7  3.900 -6.370049 14.17005 0.7024654
+25:7-30:6  0.468 -9.802049 10.73805 0.9991737</code></pre>
+</div>
+</div>
+<p>Con respecto a la combinacion temperatura 25°C y ph 7 versus 25:6, se recomienda la primera ya que presenta diferencias estadisticas significativas. El resto de los contrastes no presenta diferencias estadísticas significativas.</p>
+<div class="cell">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(<span class="fu">TukeyHSD</span>(modelo))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<p><img src="index_files/figure-html/unnamed-chunk-11-1.png" class="img-fluid" width="672"></p>
+</div>
+<div class="cell-output-display">
+<p><img src="index_files/figure-html/unnamed-chunk-11-2.png" class="img-fluid" width="672"></p>
+</div>
+<div class="cell-output-display">
+<p><img src="index_files/figure-html/unnamed-chunk-11-3.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+</section>
+</div></section>
+<section id="ejercicio-8-temperatura-y-tiempo-factorial-aplicado-a-un-dbca" class="level2" data-number="1.4">
+<h2 data-number="1.4" class="anchored" data-anchor-id="ejercicio-8-temperatura-y-tiempo-factorial-aplicado-a-un-dbca"><span class="header-section-number">1.4</span> EJERCICIO 8 ~ TEMPERATURA Y TIEMPO (FACTORIAL APLICADO A UN DBCA)</h2>
+<div style="text-align: justify">
+
+<p>El objetivo de este estudio es investigar los efectos combinados de la temperatura y el tiempo en el contenido de nutrientes de los productos alimenticios.</p>
+<p>Diseño experimental: se empleara un diseño factorial de dos factores con bloques para examinar cómo la temperatura y el tiempo afectan el contenido de nutrientes de los productos alimenticios. Los factores son la temperatura (dos niveles: 150°C y 180°C) y el tiempo (dos niveles: 30 minutos y 60 minutos). Para tener en cuenta las posibles fuentes de variabilidad, se incorporara una variable de bloqueo, los proveedores, lo que dará como resultado cinco bloques.</p>
+<p>Recopilación de datos: se prepara varios lotes del mismo producto alimenticio en condiciones controladas para cada combinación de temperatura y tiempo dentro de cada bloque. Después de la cocción, se analiza el contenido de nutrientes (p.&nbsp;ej., proteínas, grasas, vitaminas) en cada muestra utilizando métodos bromatológicos estándar.</p>
+<p>Análisis de datos: con R realizar un ANOVA factorial de dos factores con bloques para determinar los efectos principales de la temperatura y el tiempo, así como su interacción, en el contenido de nutrientes. Evaluar si la variable de bloqueo influye significativamente en la variable de respuesta. Realice pruebas post hoc, como HSD de Tukey, para identificar diferencias específicas entre los niveles de los factores.</p>
+<div class="cell">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Factor temperatura (dos niveles: 150°C y 180°C)</span></span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>temperatura <span class="ot">&lt;-</span> <span class="fu">factor</span>(<span class="fu">rep</span>(<span class="fu">c</span>(<span class="dv">150</span>, <span class="dv">180</span>), <span class="at">each=</span><span class="dv">10</span>))</span>
+<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Factor tiempo (dos niveles: 30 minutos y 60 minutos)</span></span>
+<span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a>tiempo <span class="ot">&lt;-</span> <span class="fu">factor</span>(<span class="fu">rep</span>(<span class="fu">c</span>(<span class="dv">30</span>, <span class="dv">60</span>), <span class="at">each=</span><span class="dv">5</span>))</span>
+<span id="cb24-5"><a href="#cb24-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Datos de proveedores (cinco proveedores diferentes)</span></span>
+<span id="cb24-6"><a href="#cb24-6" aria-hidden="true" tabindex="-1"></a>proveedor <span class="ot">&lt;-</span> <span class="fu">factor</span>(<span class="fu">rep</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>, <span class="at">times =</span> <span class="dv">4</span>))</span>
+<span id="cb24-7"><a href="#cb24-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Variable respuesta nutrientes</span></span>
+<span id="cb24-8"><a href="#cb24-8" aria-hidden="true" tabindex="-1"></a>nutrientes <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fl">15.2</span>, <span class="fl">14.5</span>, <span class="fl">14.8</span>, <span class="fl">12.0</span>, <span class="fl">18.3</span>,</span>
+<span id="cb24-9"><a href="#cb24-9" aria-hidden="true" tabindex="-1"></a>                <span class="fl">10.7</span>, <span class="fl">9.5</span>, <span class="fl">16.8</span>, <span class="fl">11.4</span>, <span class="fl">16.6</span>,</span>
+<span id="cb24-10"><a href="#cb24-10" aria-hidden="true" tabindex="-1"></a>                <span class="fl">13.2</span>, <span class="fl">9.4</span>, <span class="fl">11.57</span>, <span class="fl">13.2</span>, <span class="fl">12.1</span>,</span>
+<span id="cb24-11"><a href="#cb24-11" aria-hidden="true" tabindex="-1"></a>                <span class="fl">12.7</span>, <span class="fl">9.45</span>, <span class="fl">12.8</span>, <span class="fl">12.4</span>, <span class="fl">13.6</span>)</span>
+<span id="cb24-12"><a href="#cb24-12" aria-hidden="true" tabindex="-1"></a><span class="co"># Crear marco de datos</span></span>
+<span id="cb24-13"><a href="#cb24-13" aria-hidden="true" tabindex="-1"></a>datos <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(temperatura, tiempo, proveedor, nutrientes)</span>
+<span id="cb24-14"><a href="#cb24-14" aria-hidden="true" tabindex="-1"></a>datos</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>   temperatura tiempo proveedor nutrientes
+1          150     30         1      15.20
+2          150     30         2      14.50
+3          150     30         3      14.80
+4          150     30         4      12.00
+5          150     30         5      18.30
+6          150     60         1      10.70
+7          150     60         2       9.50
+8          150     60         3      16.80
+9          150     60         4      11.40
+10         150     60         5      16.60
+11         180     30         1      13.20
+12         180     30         2       9.40
+13         180     30         3      11.57
+14         180     30         4      13.20
+15         180     30         5      12.10
+16         180     60         1      12.70
+17         180     60         2       9.45
+18         180     60         3      12.80
+19         180     60         4      12.40
+20         180     60         5      13.60</code></pre>
+</div>
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(datos)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>'data.frame':   20 obs. of  4 variables:
+ $ temperatura: Factor w/ 2 levels "150","180": 1 1 1 1 1 1 1 1 1 1 ...
+ $ tiempo     : Factor w/ 2 levels "30","60": 1 1 1 1 1 2 2 2 2 2 ...
+ $ proveedor  : Factor w/ 5 levels "1","2","3","4",..: 1 2 3 4 5 1 2 3 4 5 ...
+ $ nutrientes : num  15.2 14.5 14.8 12 18.3 10.7 9.5 16.8 11.4 16.6 ...</code></pre>
+</div>
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="co"># modelo</span></span>
+<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a>modelo <span class="ot">&lt;-</span> <span class="fu">lm</span>(nutrientes <span class="sc">~</span>temperatura<span class="sc">*</span>tiempo<span class="sc">+</span>proveedor, <span class="at">data=</span>datos)</span>
+<span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a><span class="fu">Anova</span>(modelo, <span class="at">type=</span><span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>Anova Table (Type III tests)
+
+Response: nutrientes
+                   Sum Sq Df  F value   Pr(&gt;F)    
+(Intercept)        554.95  1 158.3903 2.84e-08 ***
+temperatura         23.50  1   6.7075  0.02366 *  
+tiempo               9.60  1   2.7411  0.12369    
+proveedor           45.62  4   3.2550  0.05018 .  
+temperatura:tiempo   6.36  1   1.8158  0.20271    
+Residuals           42.04 12                      
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</code></pre>
+</div>
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="co"># supuestos</span></span>
+<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a><span class="fu">shapiro.test</span>(<span class="fu">resid</span>(modelo))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+    Shapiro-Wilk normality test
+
+data:  resid(modelo)
+W = 0.96311, p-value = 0.6076</code></pre>
+</div>
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="co"># crear el vector tratamiento</span></span>
+<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a>trat<span class="ot">=</span><span class="fu">interaction</span>(datos<span class="sc">$</span>temperatura,datos<span class="sc">$</span>tiempo)</span>
+<span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a><span class="fu">leveneTest</span>(<span class="fu">resid</span>(modelo),trat,<span class="at">center =</span> mean)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>Levene's Test for Homogeneity of Variance (center = mean)
+      Df F value Pr(&gt;F)
+group  3  2.3808 0.1078
+      16               </code></pre>
+</div>
+</div>
+</div></section>
+<section id="recursos-recomendados" class="level2" data-number="1.5">
+<h2 data-number="1.5" class="anchored" data-anchor-id="recursos-recomendados"><span class="header-section-number">1.5</span> RECURSOS RECOMENDADOS</h2>
+<p><strong>Bibliografia</strong></p>
+<p>Garibaldi, L. A., Oddi, F. J., Aristimuño, F. J., &amp; Behnisch, A. N. (2019). Modelos estadísticos en lenguaje R. Cap 2. Pags. 72-</p>
+<p>Lawson, J. (2014).&nbsp;<em>Design and Analysis of Experiments with R</em>&nbsp;(Vol. 115). CRC press. Cap 4. Pags. 55-112. Disponible en: https://elearning.unite.it/pluginfile.php/221606/mod_resource/content/1/BookDOEwithR.pdf</p>
+<p>Quinteros, H. (1997). Diseño Experimental. Facultad de Ciencias Agrarias, Universidad Nacional de Jujuy. Pags. 92-109.</p>
+</section>
+</section>
+
+</main>
+<!-- /main column -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>
